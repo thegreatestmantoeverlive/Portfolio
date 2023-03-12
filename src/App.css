@@ -145,7 +145,7 @@ html {
   align-items: center;
   justify-content: center;
 }
-#skills > h1 {
+#skills > h1  , #works > h1{
   text-align: center;
   color : var(--color-1);
   font-family: var(--home-font); 
@@ -207,4 +207,17 @@ html {
 }
 .fa-code ,.fa-photo-film , .fa-meteor{
   font-size: 100px;
+}
+#works{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-button{
+  margin: 10px;
+}
+#form-element{
+  border : 1px solid white;
 }
