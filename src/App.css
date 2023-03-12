@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Orbitron&family=Space+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
 body {
   background-color: var(--color-3);
 }
@@ -14,6 +16,8 @@ html {
   --color-3: #01012a;
   --color-4: #005679;
   --color-5: #05d8e8;
+  --extra-1: "Righteous";
+  --extra-2: "Notable";
   --home-font: "Orbitron";
   --title-font: "Bubblegum Sans";
   --content-font: "Space Mono";
@@ -29,9 +33,10 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
-#navbar > * > * {
+#navbar>*>* {
   color: var(--color-1);
   font-family: var(--content-font);
 }
@@ -58,27 +63,6 @@ html {
   padding: 10px;
 }
 
-#blob {
-  z-index: -1;
-  height: 300px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  position: absolute;
-  color: white;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  animation: rotate 1s infinite;
-  background: linear-gradient(to right, aquamarine, mediumpurple);
-}
-
-#blur {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  backdrop-filter: blur(12vmax);
-}
 
 #home {
   /* border: 1px solid yellow; */
@@ -86,6 +70,7 @@ html {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 
 #title-home {
@@ -93,11 +78,13 @@ html {
   top: 25%;
   text-align: center;
   font-size: 10vw;
+
   background: -webkit-linear-gradient(var(--color-1), var(--color-3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: var(--home-font), sans-serif;
 }
+
 
 #image {
   /* border: 5px solid white;  */
@@ -109,13 +96,16 @@ html {
   top: 10vh;
   width: 50%;
   aspect-ratio: 1;
+  max-width: 500px;
   text-align: center;
+  z-index: 2;
+  margin-bottom: 45vh;
 }
 
 #home-bg {
   width: 100%;
   height: auto;
-  filter: hue-rotate(270deg);
+  filter: hue-rotate(260deg);
 }
 
 #scroll-icon {
@@ -126,12 +116,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 #scroll-title {
   color: var(--color-5);
   font-family: var(--content-font);
   letter-spacing: 2px;
+  z-index: 2;
 }
 
 .fa-down-long {
@@ -139,27 +131,37 @@ html {
   color: var(--color-5);
 }
 
-#skills-cards{
+#skills-cards {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-#skills > h1  , #works > h1{
+
+
+@media screen and (min-width: 1000px) {
+  #skills-cards {
+    flex-direction: column;
+  }
+}
+
+#skills>h1,
+#works>h1,
+#contact-title {
   text-align: center;
-  color : var(--color-1);
-  font-family: var(--home-font); 
+  color: var(--color-1);
+  font-family: var(--home-font);
   font-size: 70px;
-  background: -webkit-linear-gradient( var(--color-1), var(--color-3));
+  background: -webkit-linear-gradient(var(--color-1), var(--color-3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
 }
-.card{
-  width : 25 vh;
-  min-width : 300px;
-  aspect-ratio: 1 / 1.5 ;
-  border : 1px solid white;
+
+.card {
+  width: 25 vh;
+  min-width: 300px;
+  aspect-ratio: 1 / 1.5;
   margin: 0 30px;
   display: flex;
   flex-direction: column;
@@ -169,55 +171,146 @@ html {
   font-family: "Righteous";
   font-size: 20px;
 }
-#home-slogan{
+
+#home-slogan {
   font-family: var(--content-font);
   letter-spacing: 5px;
-  background: -webkit-linear-gradient( var(--color-1), var(--color-3));
+  background: -webkit-linear-gradient(var(--color-1), var(--color-3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: flicker 1s ease-in-out infinite alternate;
 }
 
-@keyframes flicker {
-    
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    
-      text-shadow:
-          -0.2rem -0.2rem 1rem #fff,
-          0.2rem 0.2rem 1rem #fff,
-          0 0 2rem var(--neon-text-color),
-          0 0 4rem var(--neon-text-color),
-          0 0 6rem var(--neon-text-color),
-          0 0 8rem var(--neon-text-color),
-          0 0 10rem var(--neon-text-color);
-      
-      box-shadow:
-          0 0 .5rem #fff,
-          inset 0 0 .5rem #fff,
-          0 0 2rem var(--neon-border-color),
-          inset 0 0 2rem var(--neon-border-color),
-          0 0 4rem var(--neon-border-color),
-          inset 0 0 4rem var(--neon-border-color);        
-  }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-      box-shadow: none;
-  }    
-}
-.fa-code ,.fa-photo-film , .fa-meteor{
+.fa-code,
+.fa-photo-film,
+.fa-meteor {
   font-size: 100px;
 }
-#works{
+
+#works {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.tab-button{
+.tab-button {
   margin: 10px;
 }
-#form-element{
-  border : 1px solid white;
+
+
+.tab-button {
+  background-color: #01012a;
+  border: none;
+  color: #ff296d;
+  font-family: var(--extra-1);
+  font-size: 20px;
+  margin: 0;
+  padding: 0 10px;
+
+}
+
+.active {
+  background-color: var(--color-1);
+  color: var(--color-3);
+  border-radius: 15px;
+}
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
+}
+
+label {
+  display: block;
+  color: var(--color-1);
+  font-family: var(--extra-2);
+  margin: 5px 0;
+}
+
+#contact-img {
+  width: 55%;
+  max-width: 700px;
+}
+
+#contact>button,
+input {
+  display: block;
+}
+
+form>input,
+form>textarea {
+  background-color: #01012a;
+  border: 1px solid var(--color-4);
+  border-width: 0 0 2px 0;
+  color: var(--color-1);
+  font-family: var(--extra-1);
+  font-size: 15px;
+  width: 100%;
+  resize: none;
+}
+
+#contact-button {
+  color: #01012a;
+  border: none;
+  background-color: #ff296d;
+  font-family: var(--extra-1);
+  font-size: 20px;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 40px;
+  margin: 10px;
+}
+
+.contact-icons {
+  font-size: 30px;
+  margin: 0 10px;
+  color: var(--color-1);
+}
+
+#contact-socials>*>span {
+  text-decoration: none;
+  display: inline;
+  font-family: var(--extra-2);
+  font-size: 1em;
+  color: var(--color-1);
+}
+
+#contact-socials {
+  padding-bottom: 1em;
+}
+
+#cyberpunk-track {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1;
+}
+
+#cyberpunk-track>img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+  #title-home {
+    font-size: 6em;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  #skills-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card{
+    aspect-ratio: 3 / 2;
+    width : 80vw;
+  }
 }
