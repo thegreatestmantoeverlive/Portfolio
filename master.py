@@ -1,4 +1,40 @@
+testStr = "Testing str"
+testNumArr = [1 , 2, 3, 4, 5, 6 ]
+
 # Operator precedence
+
+
+
+# Modules
+import math
+
+math.log10(10)
+math.log(9 , 3)
+math.floor(9.8)
+math.ceil(3.1)
+math.pi
+math.sqrt(4)
+
+import statistics
+
+greatStr = "the most common value"
+leastStr = "least common"
+
+greatVal = 100 
+leastVal = 1
+
+strList = [greatStr , greatStr, greatStr , leastStr, leastStr , leastVal]
+numList = [ 1, 2, 3, 4 , 5 , 6]
+
+mostFrequency = statistics.mode(strList)
+median = statistics.median(numList)
+average = statistics.mean(numList)
+
+import random 
+
+random.random()
+
+random.randint(1, 5) # returns random number in range [1,5] 1 and 5 inclusive
 
 # File handling
 
@@ -19,5 +55,11 @@ with open(file , 'w+') as filedata:
     filedata.close()
 
 with open(file , 'r') as filedata:
-    print(filedata.readlines())
+    print(filedata.readlines ())
+
+byteFile = open('samplebytes' , 'w+')
+
+import pickle
+
+serialisedStr = pickle.dump(testStr , byteFile)
 
