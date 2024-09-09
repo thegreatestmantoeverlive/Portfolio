@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
@@ -15,16 +13,17 @@ function App() {
     {
       path: "/",
       element: (
-        <HomePage
-          type="default"
-          shouldRefresh={appState?.shouldRefresh || false}
-        />
+        // <HomePage
+        //   type="default"
+        //   shouldRefresh={appState?.shouldRefresh || false}
+        // />
+        <p> sdf</p>
       ),
     },
-    // {
-    //   path : "/settings",
-    //   element : <Settings />
-    // },
+    {
+      path : "/settings",
+      element : <p> settings</p>
+    },
   ]);
 
   return (
