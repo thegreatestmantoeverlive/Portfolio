@@ -1,9 +1,9 @@
-import { RefreshType } from "./utils/types";
+import { HomePageProps } from "../utils/types";
 
 const HomePage = ({
   shouldRefresh,
   setShouldRefresh,
-}: RefreshType | undefined): React.JSX.Element => {
+}: HomePageProps | undefined): React.JSX.Element => {
   return <div className="flex flex-grow"></div>;
 };
 

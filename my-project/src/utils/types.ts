@@ -1,8 +1,15 @@
-type RefreshType = {
+type HomePageProps = {
   shouldRefresh?: boolean;
   setShouldRefresh?: React.SetStateAction<boolean>;
+  type:
+    | "default"
+    | "trending"
+    | "popular"
+    | "discussed"
+    | "responded"
+    | "recommended";
 };
 
-type AppState = RefreshType | undefined ;
+type AppState = HomePageProps | undefined;
 
-export { RefreshType, AppState };
+export { HomePageProps, AppState };
