@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily : {
+        title : [ 'Lobster' , 'sans-serif'] 
+      }
+    },
   },
   plugins: [require("@catppuccin/tailwindcss")],
 }
