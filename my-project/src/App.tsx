@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./App.css";
@@ -8,21 +8,21 @@ import { AppState } from "./utils/types";
 
 function App() {
   const [appState, setAppState] = useState<AppState>(undefined);
+  const appContext = useContext(appState);
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        // <HomePage
-        //   type="default"
-        //   shouldRefresh={appState?.shouldRefresh || false}
-        // />
-        <p> sdf</p>
+        <HomePage
+          type="default"
+          shouldRefresh={appState?.shouldRefresh || false}
+        />
       ),
     },
     {
       path : "/settings",
-      element : <p> settings</p>
+      element : <p> sdf</p>
     },
   ]);
 
