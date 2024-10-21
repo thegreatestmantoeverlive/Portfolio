@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { createContext, useContext } from "react";
 import { useState } from "react";
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import { AppState } from "./utils/types";
 
+const appContext = createContext<AppState | undefined>(undefined);
+
 function App() {
-  const [appState, setAppState] = useState<AppState>(undefined);
-  const appContext = useContext(appState);
+  const appState = useContext(appContext);
 
   const router = createBrowserRouter([
     {
@@ -21,18 +26,17 @@ function App() {
       ),
     },
     {
-      path : "/settings",
-      element : <p> sdf</p>
+      path: "/settings",
+      element: <p> sdf</p>,
     },
   ]);
 
   return (
-    <>
-      <Header />
+    <RouterProvider router={router}>
       <div className="h-screen w-screen">
-        <RouterProvider router={router}></RouterProvider>
+        <Header />
       </div>
-    </>
+    </RouterProvider>
   );
 }
 

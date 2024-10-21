@@ -1,6 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
 import Card from '@mui/material/Card'
 
+const HeroTitleStyles = ""
+
 const HeroVideoCarousel = ({
   videos,
 }: {
@@ -10,7 +12,9 @@ const HeroVideoCarousel = ({
     <div className="w-full">
       <Carousel>
         {videos.map((video) => (
-            <Card></Card>
+            <Card>
+              <h4 className={`${HeroTitleStyles} `}>{video.title}</h4>
+            </Card>
         ))}
       </Carousel>
     </div>
