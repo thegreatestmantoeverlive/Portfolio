@@ -11,3 +11,6 @@ https://www.reddit.com/r/CBSE/comments/rks81s/cs_last_minute_notes_only_thing_mi
 https://drive.google.com/drive/folders/19A8a4v-B1dfNy8XPawGtIdbC1PZqkb5x
 https://drive.google.com/drive/folders/1fGQvuVr-DStats8VHVc3sTLuyUMd7h9G?sort=13&direction=a
 https://www.reddit.com/r/CBSE/comments/11edttv/class_12_board_study_resources_thread/
+
+
+https://ankiweb.net/shared/info/1512801490
